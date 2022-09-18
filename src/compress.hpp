@@ -9,6 +9,7 @@
 #define __COMPRESS_HPP__
 
 #include <fstream>
+#include <iostream>
 #include <vector>
 #include "encode.hpp"
 #include "tthresh.hpp"
@@ -39,6 +40,9 @@ typedef struct {
 // int core_nplanes;
 
 vector<uint64_t> encode_array(dimensions d, double* c, size_t size, double sse, core_struct& core_info, bool verbose=false) {
+
+// std::cout << endl << flush << "HERE: " << endl << flush;
+return std::vector<uint64_t>{1,2};
 
     size_t total_bits = 0;
 
@@ -73,7 +77,6 @@ vector<uint64_t> encode_array(dimensions d, double* c, size_t size, double sse, 
     vector<double> plane_sses; // Only for factors: SSE incurred by each plane
     long i = 0; // Used to find the breakpoint
     double incurred_sse = 0; // Only for core: total SSE incurred
-    
 
     // loop over bit planes
     double m;

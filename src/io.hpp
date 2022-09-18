@@ -10,8 +10,9 @@
 #define __IO_HPP__
 
 #include <stdio.h>
-#include <string.h>
+#include <string>
 #include <assert.h>
+#include "tthresh.hpp"
 //#include "zlib.h"
 
 // Avoids corruption of the input and output data on Windows/MS-DOS systems
@@ -90,7 +91,7 @@ void close_write() {
 
 // If read_bits() has been called, call close_rbit() before read_stream()
 
-void open_read(string input_file)
+void open_read(std::string input_file)
 {
     //SET_BINARY_MODE(input_file.c_str());
     zs.file = fopen(input_file.c_str(), "rb");
